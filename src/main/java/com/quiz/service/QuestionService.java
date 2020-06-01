@@ -1,12 +1,17 @@
 package com.quiz.service;
 
-import com.quiz.repository.QuestionRepository;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
+import com.quiz.model.Question;
+import java.util.List;
 
-@Service
-@RequiredArgsConstructor
-public class QuestionService {
+public interface QuestionService {
 
-    private final QuestionRepository questionRepository;
+    void addQuestion(Question question);
+
+    Question updateQuestion(Long id, Question question);
+
+    void removeQuestion(Long id);
+
+    Question getQuestion(Long id);
+
+    List<Question> getQuestions();
 }

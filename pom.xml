@@ -10,10 +10,11 @@
         <version>2.1.7.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>com.application</groupId>
-    <artifactId>middlejava</artifactId>
+    <artifactId>quiz-application</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>middlejava</name>
+    <name>quiz-application</name>
     <description>Pet project</description>
 
     <dependencies>
@@ -53,6 +54,11 @@
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-core</artifactId>
             <version>5.1.4.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
 

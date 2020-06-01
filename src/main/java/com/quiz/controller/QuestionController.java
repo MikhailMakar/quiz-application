@@ -1,6 +1,6 @@
 package com.quiz.controller;
 
-import com.quiz.service.QuestionService;
+import com.quiz.service.impl.QuestionServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -8,5 +8,5 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class QuestionController {
 
-    private final QuestionService questionService;
+    private final QuestionServiceImpl questionService;
 }
