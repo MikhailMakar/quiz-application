@@ -2,4 +2,4 @@
 /.idea/
 /gradle/
 /build/
-quiz-application.iml
+*.iml

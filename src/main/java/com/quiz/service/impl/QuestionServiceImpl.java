@@ -6,6 +6,7 @@ import com.quiz.service.QuestionService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -13,23 +14,27 @@ public class QuestionServiceImpl implements QuestionService {
 
     private final QuestionRepository questionRepository;
 
+    @Transactional
     @Override
     public Question createQuestion(Question question) {
-        return null;
+        return questionRepository.save(question);
     }
 
+    @Transactional
     @Override
     public void removeQuestion(Long id) {
-
+        questionRepository.deleteById(id);
     }
 
+    @Transactional(readOnly = true)
     @Override
     public Question getQuestion(Long id) {
-        return null;
+        return questionRepository.getOne(id);
     }
 
+    @Transactional(readOnly = true)
     @Override
     public List<Question> getQuestions() {
-        return null;
+        return questionRepository.findAll();
     }
 }
