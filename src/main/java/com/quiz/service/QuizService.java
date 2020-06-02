@@ -5,9 +5,7 @@ import java.util.List;
 
 public interface QuizService {
 
-    void addQuiz(Quiz quiz);
-
-    Quiz updateQuiz(Long id, Quiz quiz);
+    Quiz createQuiz(Quiz quiz);
 
     void removeQuiz(Long id);
 

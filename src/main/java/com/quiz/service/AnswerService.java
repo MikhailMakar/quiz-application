@@ -5,9 +5,7 @@ import java.util.List;
 
 public interface AnswerService {
 
-    void addAnswer(Answer answer);
-
-    Answer updateAnswer(Long id, Answer answer);
+    Answer createAnswer(Answer answer);
 
     void removeAnswer(Long id);
 

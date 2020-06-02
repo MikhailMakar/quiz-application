@@ -14,12 +14,7 @@ public class QuizServiceImpl implements QuizService {
     private final QuizRepository quizRepository;
 
     @Override
-    public void addQuiz(Quiz quiz) {
-
-    }
-
-    @Override
-    public Quiz updateQuiz(Long id, Quiz quiz) {
+    public Quiz createQuiz(Quiz quiz) {
         return null;
     }
 

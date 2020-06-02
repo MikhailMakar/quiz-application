@@ -5,9 +5,7 @@ import java.util.List;
 
 public interface QuestionService {
 
-    void addQuestion(Question question);
-
-    Question updateQuestion(Long id, Question question);
+    Question createQuestion(Question question);
 
     void removeQuestion(Long id);
 

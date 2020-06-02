@@ -14,12 +14,7 @@ public class AnswerServiceImpl implements AnswerService {
     private final AnswerRepository answerRepository;
 
     @Override
-    public void addAnswer(Answer answer) {
-
-    }
-
-    @Override
-    public Answer updateAnswer(Long id, Answer answer) {
+    public Answer createAnswer(Answer answer) {
         return null;
     }
 

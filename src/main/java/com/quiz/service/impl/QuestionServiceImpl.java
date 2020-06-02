@@ -14,12 +14,7 @@ public class QuestionServiceImpl implements QuestionService {
     private final QuestionRepository questionRepository;
 
     @Override
-    public void addQuestion(Question question) {
-
-    }
-
-    @Override
-    public Question updateQuestion(Long id, Question question) {
+    public Question createQuestion(Question question) {
         return null;
     }
 

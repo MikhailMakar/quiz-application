@@ -14,12 +14,7 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
 
     @Override
-    public void addUser(User user) {
-
-    }
-
-    @Override
-    public User updateUser(Long id, User user) {
+    public User createUser(User user) {
         return null;
     }
 
