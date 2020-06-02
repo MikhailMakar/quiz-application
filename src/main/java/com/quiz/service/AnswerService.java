@@ -1,15 +1,16 @@
 package com.quiz.service;
 
+import com.quiz.dto.AnswerDto;
 import com.quiz.model.Answer;
 import java.util.List;
 
 public interface AnswerService {
 
-    Answer createAnswer(Answer answer);
+    Answer createAnswer(AnswerDto answerDto);
 
-    void removeAnswer(Long id);
+    void deleteAnswer(long id);
 
-    Answer getAnswer(Long id);
+    Answer getAnswer(long id);
 
     List<Answer> getAnswers();
 }

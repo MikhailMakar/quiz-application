@@ -1,5 +1,6 @@
 package com.quiz.model;
 
+import com.quiz.common.Role;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -22,10 +23,8 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column
     private String name;
 
-    @Column
     private String lastName;
 
     @Column(name = "role")

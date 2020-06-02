@@ -1,15 +1,16 @@
 package com.quiz.service;
 
+import com.quiz.dto.QuizDto;
 import com.quiz.model.Quiz;
 import java.util.List;
 
 public interface QuizService {
 
-    Quiz createQuiz(Quiz quiz);
+    Quiz createQuiz(QuizDto quizDto);
 
-    void removeQuiz(Long id);
+    void deleteQuiz(long id);
 
-    Quiz getQuiz(Long id);
+    Quiz getQuiz(long id);
 
     List<Quiz> getQuizzes();
 }

@@ -1,8 +1,10 @@
 package com.quiz.service.impl;
 
+import com.quiz.dto.QuestionDto;
 import com.quiz.model.Question;
 import com.quiz.repository.QuestionRepository;
 import com.quiz.service.QuestionService;
+import com.quiz.util.GenericModelMapper;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -16,19 +18,19 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Transactional
     @Override
-    public Question createQuestion(Question question) {
-        return questionRepository.save(question);
+    public Question createQuestion(QuestionDto questionDto) {
+        return questionRepository.save(GenericModelMapper.convertToClass(questionDto, Question.class));
     }
 
     @Transactional
     @Override
-    public void removeQuestion(Long id) {
+    public void deleteQuestion(long id) {
         questionRepository.deleteById(id);
     }
 
     @Transactional(readOnly = true)
     @Override
-    public Question getQuestion(Long id) {
+    public Question getQuestion(long id) {
         return questionRepository.getOne(id);
     }
 

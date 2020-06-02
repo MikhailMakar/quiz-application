@@ -1,4 +1,4 @@
-package com.quiz.model;
+package com.quiz.common;
 
 import org.springframework.security.core.GrantedAuthority;
 
