@@ -3,6 +3,7 @@ package com.quiz.model;
 import java.util.List;
 import javax.persistence.*;
 import lombok.Builder;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,7 +11,7 @@ import lombok.Setter;
 @Builder
 @Getter
 @Setter
-@Table(name = "questions")
+@EqualsAndHashCode
 public class Question {
 
     @Id
@@ -19,5 +20,10 @@ public class Question {
 
     private String questionValue;
 
+    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL)
     private List<Answer> answers;
+
+    @ManyToOne
+    @JoinColumn(name = "quizId")
+    private Quiz quiz;
 }

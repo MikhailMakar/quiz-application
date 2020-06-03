@@ -2,6 +2,7 @@ package com.quiz.model;
 
 import javax.persistence.*;
 import lombok.Builder;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,7 +10,7 @@ import lombok.Setter;
 @Builder
 @Getter
 @Setter
-@Table(name = "answers")
+@EqualsAndHashCode
 public class Answer {
 
     @Id
@@ -19,4 +20,8 @@ public class Answer {
     private String answerValue;
 
     private boolean isCorrect;
+
+    @ManyToOne
+    @JoinColumn(name = "questionId")
+    private Question question;
 }

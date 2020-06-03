@@ -2,13 +2,9 @@ package com.quiz.model;
 
 import com.quiz.common.Role;
 import java.util.Set;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import lombok.Builder;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,7 +12,7 @@ import lombok.Setter;
 @Builder
 @Getter
 @Setter
-@Table(name = "users")
+@EqualsAndHashCode
 public class User {
 
     @Id
@@ -27,6 +23,8 @@ public class User {
 
     private String lastName;
 
-    @Column(name = "role")
+    @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
+    @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
+    @Enumerated(EnumType.STRING)
     private Set<Role> roles;
 }
