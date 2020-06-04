@@ -2,8 +2,7 @@ spring:
   jpa:
     show-sql: false
     hibernate:
-      ddl-auto: none
-
+      ddl-auto: validate
 
 app:
   datasource:
