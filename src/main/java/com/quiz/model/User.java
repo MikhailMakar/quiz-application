@@ -3,10 +3,7 @@ package com.quiz.model;
 import com.quiz.common.Role;
 import java.util.Set;
 import javax.persistence.*;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Builder
@@ -14,6 +11,8 @@ import lombok.Setter;
 @Setter
 @EqualsAndHashCode
 @Table(name = "user_table")
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
 
     @Id
