@@ -1,10 +1,8 @@
 package com.quiz.service.impl;
 
-import com.quiz.dto.AnswerDto;
 import com.quiz.model.Answer;
 import com.quiz.repository.AnswerRepository;
 import com.quiz.service.AnswerService;
-import com.quiz.util.GenericModelMapper;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -18,19 +16,19 @@ public class AnswerServiceImpl implements AnswerService {
 
     @Transactional
     @Override
-    public Answer createAnswer(AnswerDto answerDto) {
-        return answerRepository.save(GenericModelMapper.convertToClass(answerDto, Answer.class));
+    public Answer createAnswer(Answer answer) {
+        return answerRepository.save(answer);
     }
 
     @Transactional
     @Override
-    public void delete(long id) {
+    public void deleteById(long id) {
         answerRepository.deleteById(id);
     }
 
     @Transactional(readOnly = true)
     @Override
-    public Answer getAnswer(long id) {
+    public Answer getAnswerById(long id) {
         return answerRepository.getOne(id);
     }
 

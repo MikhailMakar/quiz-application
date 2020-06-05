@@ -1,16 +1,15 @@
 package com.quiz.service;
 
-import com.quiz.dto.UserDto;
 import com.quiz.model.User;
 import java.util.List;
 
 public interface UserService {
 
-    User createUser(UserDto userDto);
+    User createUser(User user);
 
-    void delete(long id);
+    void deleteById(long id);
 
-    User getUser(long id);
+    User getUserById(long id);
 
     List<User> getUsers();
 }

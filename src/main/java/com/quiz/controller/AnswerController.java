@@ -1,9 +1,8 @@
 package com.quiz.controller;
 
-import com.quiz.dto.AnswerDto;
-import com.quiz.dto.ListForDto;
+import com.quiz.model.Answer;
 import com.quiz.service.AnswerService;
-import com.quiz.util.GenericModelMapper;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -17,23 +16,23 @@ public class AnswerController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public AnswerDto createAnswer(@RequestBody AnswerDto answerDto) {
-        return GenericModelMapper.convertToClass(answerService.createAnswer(answerDto), AnswerDto.class);
+    public Answer createAnswer(@RequestBody Answer answer) {
+        return answerService.createAnswer(answer);
     }
 
     @DeleteMapping
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteAnswerById(@PathVariable long id) {
-        answerService.delete(id);
+        answerService.deleteById(id);
     }
 
     @GetMapping("/{id}")
-    public AnswerDto getAnswer(@PathVariable long id) {
-        return GenericModelMapper.convertToClass(answerService.getAnswer(id), AnswerDto.class);
+    public Answer getAnswer(@PathVariable long id) {
+        return answerService.getAnswerById(id);
     }
 
     @GetMapping("/all")
-    public ListForDto<AnswerDto> getAllAnswers() {
-        return GenericModelMapper.convertList(new ListForDto<>(answerService.getAnswers()), AnswerDto.class);
+    public List<Answer> getAllAnswers() {
+        return answerService.getAnswers();
     }
 }

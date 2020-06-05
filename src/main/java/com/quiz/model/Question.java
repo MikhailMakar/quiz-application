@@ -20,10 +20,5 @@ public class Question {
     @Column(name = "question_value")
     private String questionValue;
 
-    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL)
     private List<Answer> answers;
-
-    @ManyToOne
-    @JoinColumn(name = "quiz_id")
-    private Quiz quiz;
 }
