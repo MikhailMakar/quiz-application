@@ -1,6 +1,5 @@
 package com.quiz.controller;
 
-import com.quiz.common.RequestsInfo;
 import com.quiz.dto.ListForDto;
 import com.quiz.dto.QuizDto;
 import com.quiz.service.impl.QuizServiceImpl;
@@ -17,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(RequestsInfo.QUIZZES)
+@RequestMapping("/quizzes")
 @RequiredArgsConstructor
 public class QuizController {
 
@@ -35,12 +34,12 @@ public class QuizController {
         quizService.deleteQuiz(id);
     }
 
-    @GetMapping(RequestsInfo.ID)
+    @GetMapping("/{id}")
     public QuizDto getQuiz(@PathVariable long id) {
         return GenericModelMapper.convertToClass(quizService.getQuiz(id), QuizDto.class);
     }
 
-    @GetMapping(RequestsInfo.ALL)
+    @GetMapping("/all")
     public ListForDto<QuizDto> getAllQuizzes() {
         return GenericModelMapper.convertList(new ListForDto<>(quizService.getQuizzes()), QuizDto.class);
     }
