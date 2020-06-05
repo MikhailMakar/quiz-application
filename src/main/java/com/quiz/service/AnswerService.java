@@ -8,7 +8,7 @@ public interface AnswerService {
 
     Answer createAnswer(AnswerDto answerDto);
 
-    void deleteAnswer(long id);
+    void delete(long id);
 
     Answer getAnswer(long id);
 

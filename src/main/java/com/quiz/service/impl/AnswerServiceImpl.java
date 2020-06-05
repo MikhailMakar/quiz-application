@@ -24,7 +24,7 @@ public class AnswerServiceImpl implements AnswerService {
 
     @Transactional
     @Override
-    public void deleteAnswer(long id) {
+    public void delete(long id) {
         answerRepository.deleteById(id);
     }
 

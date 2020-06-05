@@ -24,7 +24,7 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Transactional
     @Override
-    public void deleteQuestion(long id) {
+    public void delete(long id) {
         questionRepository.deleteById(id);
     }
 

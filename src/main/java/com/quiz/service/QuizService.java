@@ -8,7 +8,7 @@ public interface QuizService {
 
     Quiz createQuiz(QuizDto quizDto);
 
-    void deleteQuiz(long id);
+    void delete(long id);
 
     Quiz getQuiz(long id);
 

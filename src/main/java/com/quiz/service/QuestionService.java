@@ -8,7 +8,7 @@ public interface QuestionService {
 
     Question createQuestion(QuestionDto questionDto);
 
-    void deleteQuestion(long id);
+    void delete(long id);
 
     Question getQuestion(long id);
 

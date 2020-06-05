@@ -2,25 +2,18 @@ package com.quiz.controller;
 
 import com.quiz.dto.ListForDto;
 import com.quiz.dto.QuestionDto;
-import com.quiz.service.impl.QuestionServiceImpl;
+import com.quiz.service.QuestionService;
 import com.quiz.util.GenericModelMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/questions")
 @RequiredArgsConstructor
 public class QuestionController {
 
-    private final QuestionServiceImpl questionService;
+    private final QuestionService questionService;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
@@ -31,7 +24,7 @@ public class QuestionController {
     @DeleteMapping
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteQuestionById(@PathVariable long id) {
-        questionService.deleteQuestion(id);
+        questionService.delete(id);
     }
 
     @GetMapping("/{id}")
