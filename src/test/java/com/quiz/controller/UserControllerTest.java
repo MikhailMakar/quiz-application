@@ -33,6 +33,7 @@ public class UserControllerTest {
     public void createUserTest() throws Exception {
         String userCreateJson = mapper.writeValueAsString(User.builder().build());
 
+
         mockMvc.perform(post("/users")
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
                 .content(userCreateJson))
